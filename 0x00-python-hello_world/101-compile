@@ -1,5 +1,0 @@
-#!/bin/bash
-PYFILE=$PYFILE
-PYFILEC="${PYFILE}c"
-echo "Compiling main.py ..."
-python3 -c "import py_compile; py_compile.compile("$PYFILE", cfile="$PYFILEc")"
