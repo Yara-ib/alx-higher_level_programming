@@ -11,7 +11,6 @@ if __name__ == "__main__":
             return cal.sub(a, b)
         elif operator == "*":
             return cal.mul(a, b)
-            # return a * b
         elif operator == "/":
             return cal.div(a, b)
 
