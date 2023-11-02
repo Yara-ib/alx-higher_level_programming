@@ -10,8 +10,8 @@ if __name__ == "__main__":
         elif operator == "-":
             return cal.sub(a, b)
         elif operator == "*":
-            # return cal.mul(a, b)
-            return a * b
+            return cal.mul(a, b)
+            # return a * b
         elif operator == "/":
             return cal.div(a, b)
 
