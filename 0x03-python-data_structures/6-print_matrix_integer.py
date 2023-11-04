@@ -2,5 +2,5 @@
 def print_matrix_integer(matrix=[[]]):
     for first in matrix:
         for second in first:
-            print("{}".format(second), end=" ")
+            print("{:d}".format(second), end=" ")
         print()
