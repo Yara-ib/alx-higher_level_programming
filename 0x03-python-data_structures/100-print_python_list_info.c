@@ -21,6 +21,8 @@ void print_python_list_info(PyObject *p)
 	/* 2- list->allocated: gets what been alloacted since the beginning */
 	/* 1 & 2 are Py_ssize_t which is ssize_t originally >> long signed int */
 
+	/* PyList_Size(p) == list->ob_base.ob_size */
+
 	/**
 	 * list->ob_item[i]->ob_type->tp_name:
 	 * ob_item: double ptr + ob_type: ptr + tp_name: ptr && list: ptr
@@ -28,7 +30,7 @@ void print_python_list_info(PyObject *p)
 
 	if PyList_Check(p)
 	{
-		printf("[*] Size of the Python List = %ld\n", PyList_Size(p));
+		printf("[*] Size of the Python List = %ld\n", list->ob_base.ob_size);
 		printf("[*] Allocated = %ld\n", list->allocated);
 		for (; i < PyList_Size(p); i++)
 		{
