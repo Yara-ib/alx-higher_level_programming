@@ -7,10 +7,6 @@ matrix = [
     [7, 8, 9]
 ]
 
-
-# matrix = [1, 2, 3]
-
-
 new_matrix = square_matrix_simple(matrix)
 print(new_matrix)
 print(matrix)
