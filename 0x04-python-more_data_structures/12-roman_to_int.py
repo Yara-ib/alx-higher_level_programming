@@ -1,26 +1,26 @@
 #!/usr/bin/python3
 def Roman_numerals(roman_string):
-    result = 0
-    for n in roman_string:
-        if n == "I":
-            result += 1
-        elif n == "V":
-            result += 5
-        elif n == "X":
-            result += 10
-        elif n == "L":
-            result += 50
-        elif n == "C":
-            result += 100
-        elif n == "D":
-            result += 500
-        elif n == "M":
-            result += 1000
-    return result
-
+    if roman_string == "I":
+        return 1
+    elif roman_string == "V":
+        return 5
+    elif roman_string == "X":
+        return 10
+    elif roman_string == "L":
+        return 50
+    elif roman_string == "C":
+        return 100
+    elif roman_string == "D":
+        return 500
+    elif roman_string == "M":
+        return 1000
 
 def roman_to_int(roman_string):
-    if roman_string.isalpha() and roman_string:
-        return Roman_numerals(roman_string)
-    else:
-        return 0
+    result, previous = 0, 0
+    for latin_n in reversed(roman_string):
+        if previous > Roman_numerals(latin_n):
+            result -= Roman_numerals(latin_n)
+        else:
+            result += Roman_numerals(latin_n)
+        previous = Roman_numerals(latin_n)
+    return result
