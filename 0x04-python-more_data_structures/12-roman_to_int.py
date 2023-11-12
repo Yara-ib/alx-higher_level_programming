@@ -15,6 +15,7 @@ def Roman_numerals(roman_string):
     elif roman_string == "M":
         return 1000
 
+
 def roman_to_int(roman_string):
     if not roman_string or type(roman_string) != str:
         return 0
