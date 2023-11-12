@@ -16,6 +16,8 @@ def Roman_numerals(roman_string):
         return 1000
 
 def roman_to_int(roman_string):
+    if not roman_string or type(roman_string) != str:
+        return 0
     result, previous = 0, 0
     for latin_n in reversed(roman_string):
         if previous > Roman_numerals(latin_n):
