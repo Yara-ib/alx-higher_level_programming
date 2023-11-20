@@ -2,8 +2,8 @@
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
     for idx in range(list_length):
-        res = 0
         try:
+            res = 0
             res = my_list_1[idx] / my_list_2[idx]
         except TypeError:
             print("wrong type")
