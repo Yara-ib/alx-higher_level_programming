@@ -6,6 +6,6 @@ class Square:
     """ Return nothing .. """
     pass
 
-    def __init__(self, __size):
+    def __init__(self, size):
         """ Initializing the attributes. """
-        self._Square__size = __size
+        self._Square__size = size
