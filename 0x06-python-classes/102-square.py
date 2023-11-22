@@ -29,11 +29,11 @@ class Square:
 
     def __eq__(self, other):
         """ To handle == between instances."""
-        return self.area() < other.area()
+        return self.area() == other.area()
 
     def __ne__(self, other):
         """ To handle != between instances."""
-        return self.area() < other.area()
+        return self.area() != other.area()
 
     def __lt__(self, other):
         """ To handle < between instances."""
@@ -41,12 +41,12 @@ class Square:
 
     def __gt__(self, other):
         """ To handle > between instances."""
-        return self.area() < other.area()
+        return self.area() > other.area()
 
     def __le__(self, other):
         """ To handle <= between instances."""
-        return self.area() < other.area()
+        return self.area() <= other.area()
 
     def __ge__(self, other):
         """ To handle >= between instances."""
-        return self.area() < other.area()
+        return self.area() >= other.area()
