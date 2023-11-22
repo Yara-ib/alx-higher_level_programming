@@ -8,7 +8,7 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """ Initializing the attributes. """
         self._Square__size = size
-        self.__position = position
+        self.position = position
 
     def area(self):
         """ Returns area of a square. """
