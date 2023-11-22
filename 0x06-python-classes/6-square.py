@@ -47,8 +47,7 @@ class Square:
             print()
         else:
             loops = self._Square__size
+            if self.__position[1] > 0:
+                print(self.__position[1] * "\n", end="")
             for loops in range(self._Square__size):
-                if self.__position[1] > 0:
-                    print(self.__position[0] * "_" + self._Square__size * "#")
-                else:
-                    print(self.__position[0] * " " + self._Square__size * "#")
+                print(self.__position[0] * " " + self._Square__size * "#")
