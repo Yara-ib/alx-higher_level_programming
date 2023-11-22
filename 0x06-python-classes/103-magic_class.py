@@ -6,7 +6,7 @@ import math
 class MagicClass:
     """ A class defines a circle."""
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """ Initializing the attributes.
 
         Attributes:
