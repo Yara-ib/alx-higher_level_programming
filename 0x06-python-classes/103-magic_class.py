@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Importing math module to use."""
 import math
 
 
@@ -8,7 +9,7 @@ class MagicClass:
     def __init__(self, radius):
         """ Initializing the attributes.
 
-        Args:
+        Attributes:
             radius: radius of a circle.
 
         Returns:
@@ -22,7 +23,7 @@ class MagicClass:
     def area(self):
         """ Method/function to get the area of a circle.
 
-        Args:
+        Attributes:
             none.
 
         Returns:
@@ -33,7 +34,7 @@ class MagicClass:
     def circumference(self):
         """ Method/function to get the circumference of a circle.
 
-        Args:
+        Attributes:
             none.
 
         Returns:
