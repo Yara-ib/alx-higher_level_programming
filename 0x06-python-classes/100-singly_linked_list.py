@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Creating a Singly linked list. """
+
+
 class Node:
     """ Class for creating a node.
 
