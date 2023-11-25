@@ -59,8 +59,8 @@ class Square:
             return ""
         else:
             result = ""
-            if self.__position[1] > 0:
-                result += self.__position[1] * "" + "\n"
+            # if self.__position[1] > 0:
+            #     result += self.__position[1] * "" + "\n"
             for loops in range(self._Square__size - 1):
                 line = self.__position[0] * " " + self._Square__size * "#"
                 result += line + "\n"
