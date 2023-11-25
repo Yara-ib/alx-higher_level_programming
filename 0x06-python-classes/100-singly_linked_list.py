@@ -52,11 +52,11 @@ class SinglyLinkedList:
     Returns:
         string using __str__
     """
-    list = []
 
     def __init__(self):
         """ Initializing the attributes for creating a SinglyLinkedList. """
         self.head = None
+        self.list = []
 
     def sorted_insert(self, value):
         """ Inserting a new node in the SinglyLinkedList. """
@@ -75,8 +75,8 @@ class SinglyLinkedList:
             node.next_node = None
             node.data = value
 
-        SinglyLinkedList.list.append(value)
+        self.list.append(value)
 
     def __str__(self) -> str:
         """ Converting the data stored @each node to string and sorting it."""
-        return '\n'.join(map(str, sorted(SinglyLinkedList.list)))
+        return '\n'.join(map(str, sorted(self.list)))
