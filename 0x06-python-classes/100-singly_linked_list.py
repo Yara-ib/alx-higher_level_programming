@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Creating a Singly linked list. """
+
+
 class Node:
     """ Class for creating a node.
 
@@ -58,14 +60,14 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """ Inserting a new node in the SinglyLinkedList. """
-        node = Node(value) # creating node to be added to the list
+        node = Node(value)
 
-        if self.head is None: # creating the first node in the LL
+        if self.head is None:
             self.head = node
             node.data = value
             self.head.next_node = node.next_node = None
 
-        else: # adding other nodes to the LL
+        else:
             ptr = self.head
             while ptr.next_node is not None:
                 ptr = ptr.next_node
