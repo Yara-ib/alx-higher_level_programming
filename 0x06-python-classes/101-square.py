@@ -48,8 +48,8 @@ class Square:
         if self._Square__size == 0:
             print()
         else:
-            if self.__position[1] > 0:
-                print(self.__position[1] * " ", end="")
+            # if self.__position[1] > 0:
+            #     print(self.__position[1] * " ", end="")
             for loops in range(self._Square__size):
                 print(self.__position[0] * " " + self._Square__size * "#")
 
