@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """ Creating a Singly linked list. """
-
-
 class Node:
     """ Class for creating a node.
 
@@ -14,32 +12,33 @@ class Node:
     """
     def __init__(self, data, next_node=None):
         """ Initializing the attributes for creating a node. """
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
         """ Getting the data. """
-        return self.data
+        return self.__data
 
     @data.setter
     def data(self, value):
         """ Setting the data. """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
-        self.data = value
+        self.__data = value
 
     @property
     def next_node(self):
         """ Getting the next.node. """
-        return self.next_node
+        return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
         """ Setting the next.node. """
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
-        self.next_node = value
+        else:
+            self.__next_node = value
 
 
 class SinglyLinkedList:
@@ -56,17 +55,24 @@ class SinglyLinkedList:
     def __init__(self):
         """ Initializing the attributes for creating a SinglyLinkedList. """
         self.head = None
-        self.data = 0
 
     def sorted_insert(self, value):
         """ Inserting a new node in the SinglyLinkedList. """
-        if self.head is None:
-            self.head = Node.next_node
-            Node.data = value
-        else:
-            while Node.next_node is None:
-                Node.next_node = None
-                Node.data = value
+        node = Node(value) # creating node to be added to the list
+
+        if self.head is None: # creating the first node in the LL
+            self.head = node
+            node.data = value
+            self.head.next_node = node.next_node = None
+
+        else: # adding other nodes to the LL
+            ptr = self.head
+            while ptr.next_node is not None:
+                ptr = ptr.next_node
+            ptr.next_node = node
+            node.next_node = None
+            node.data = value
+
         SinglyLinkedList.list.append(value)
 
     def __str__(self) -> str:
