@@ -65,8 +65,8 @@ class Rectangle:
         return (side + "\n") * (self.__height - 1) + side
 
     def __repr__(self):
-        new = "Rectangle("+str(self.__width)+", "+str(self.__height)+")"
-        return new
+        """ Return the string form for the rectangle representation. """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
         """ Delete instance of Rectangle & printing message during that. """
@@ -75,11 +75,14 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        if type(rect_1) != Rectangle:
+        """Method to return the biggest rectangle in area. """
+
+        if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) != Rectangle:
+        if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() == rect_2.area():
+
+        if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
             return rect_1
         else:
             return rect_2
