@@ -16,6 +16,7 @@ if not isinstance(np, int):
 if np < 4:
     print("N must be at least 4")
     sys.exit(1)
+
 lis2t = []
 for n in range(np):
     for m in range(np):
