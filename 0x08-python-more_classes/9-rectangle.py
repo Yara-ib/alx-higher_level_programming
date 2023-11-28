@@ -91,4 +91,4 @@ class Rectangle:
     def square(cls, size=0):
         """ Returns new instances to be squared shape. """
         width = height = size
-        return cls(width, height)
+        return cls(size, size)
