@@ -7,11 +7,6 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
-    @classmethod
-    def square(cls, size=0):
-        """ Returns new instances to be squared shape. """
-        return cls(size, size)
-
     def __init__(self, width=0, height=0):
         """ Initializing parameters.
 
@@ -91,3 +86,9 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """ Returns new instances to be squared shape. """
+        Rectangle.number_of_instances += 1
+        return cls(size, size)
