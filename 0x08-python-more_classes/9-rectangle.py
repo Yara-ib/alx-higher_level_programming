@@ -57,17 +57,16 @@ class Rectangle:
         return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        type_symbol = str(self.print_symbol)
-        if self.__width == 0 or self.__height == 0:
-            rect = ''
-            return rect
-        else:
-            rect = ((type_symbol * self.__width + '\n') * (self.__height - 1))
-            return (rect + (type_symbol * self.__width))
+        """ Return the string form for the rectangle represented by #. """
+        if self.__height == 0 or self.__width == 0:
+            return ""
+
+        side = self.__width * str(self.print_symbol)
+        return (side + "\n") * (self.__height - 1) + side
 
     def __repr__(self):
-        """ Return the string form for the rectangle representation. """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        new = "Rectangle("+str(self.__width)+", "+str(self.__height)+")"
+        return new
 
     def __del__(self):
         """ Delete instance of Rectangle & printing message during that. """
