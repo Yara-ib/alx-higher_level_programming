@@ -90,4 +90,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """ Returns new instances to be squared shape. """
-        return cls(size, size)
+        return cls(width=size, height=size)
