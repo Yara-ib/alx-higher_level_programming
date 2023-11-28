@@ -57,12 +57,13 @@ class Rectangle:
         return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        """ Return the string form for the rectangle represented by #. """
-        if self.__height == 0 or self.__width == 0:
-            return ""
-
-        side = self.__width * str(self.print_symbol)
-        return (side + "\n") * (self.__height - 1) + side
+        type_symbol = str(self.print_symbol)
+        if self.__width == 0 or self.__height == 0:
+            rect = ''
+            return rect
+        else:
+            rect = ((type_symbol * self.__width + '\n') * (self.__height - 1))
+            return (rect + (type_symbol * self.__width))
 
     def __repr__(self):
         """ Return the string form for the rectangle representation. """
