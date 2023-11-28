@@ -21,8 +21,4 @@ for n in range(np):
     for m in range(np):
         if n != m:
             lis2t.append([n, m])
-new = []
-for item in lis2t:
-    for i in item:
-        if i =
 print(lis2t)
