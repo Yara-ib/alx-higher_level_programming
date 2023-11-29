@@ -69,3 +69,4 @@ TypeError: m_b must be a list
 >>> matrix_mul()
 Traceback (most recent call last):
 ...
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
