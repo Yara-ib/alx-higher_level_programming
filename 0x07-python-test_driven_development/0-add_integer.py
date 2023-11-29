@@ -18,7 +18,7 @@ def add_integer(a, b=98):
         if not a and a != 0:
             raise TypeError("missing 1 required positional argument: 'a'")
         if a + b == float("inf") or a + b == -float("inf"):
-            return 89
+            raise ValueError("Float overflow")
         if a is "NAN" or b is "NAN":
             raise ValueError("cannot convert float NaN to integer")
         return int(a) + int(b)
