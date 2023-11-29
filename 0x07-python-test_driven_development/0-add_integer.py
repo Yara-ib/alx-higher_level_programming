@@ -21,8 +21,6 @@ def add_integer(a, b=98):
         return 89
     # if not a and a != 0:
     #     raise TypeError("missing 1 required positional argument: 'a'")
-    if not b:
-        b = 89
     return int(a) + int(b)
 
     # except NameError as ne:
