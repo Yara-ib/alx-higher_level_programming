@@ -43,7 +43,14 @@ Traceback (most recent call last):
 ...
 TypeError: m_a should contain only integers or floats
 
+# New::
 >>> matrix_mul([[1, 2], [3, 4]], [[3, 5], [2,5], [3, 4]])
 Traceback (most recent call last):
 ...
 ValueError: m_a and m_b can't be multiplied
+
+
+>>> matrix_mul([[2,5], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
