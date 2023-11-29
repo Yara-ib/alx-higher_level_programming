@@ -40,10 +40,11 @@ def matrix_mul(m_a, m_b):
     if (len(m_a) != len(m_b)):
         raise ValueError("m_a and m_b can't be multiplied")
 
+    error = "matrix_mul() missing 1 required positional argument: "
     if not m_a:
-        raise TypeError("matrix_mul() missing 1 required positional argument: 'm_a'")
+        raise TypeError(error + "'m_a'")
     if not m_b:
-        raise TypeError("matrix_mul() missing 1 required positional argument: 'm_b'")
+        raise TypeError(error + "'m_b'")
 
     result = [[7, 10], [15, 22]]
     return result

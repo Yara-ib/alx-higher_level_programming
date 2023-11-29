@@ -43,7 +43,7 @@ Traceback (most recent call last):
 ...
 TypeError: m_a should contain only integers or floats
 
-# New::
+New::
 >>> matrix_mul([[1, 2], [3, 4]], [[3, 5], [2,5], [3, 4]])
 Traceback (most recent call last):
 ...
