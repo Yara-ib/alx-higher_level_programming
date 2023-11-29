@@ -17,10 +17,10 @@ def add_integer(a, b=98):
             raise TypeError("b must be an integer")
         if not a and a != 0:
             raise TypeError("missing 1 required positional argument: 'a'")
-        # if a + b == float("inf") or a + b == -float("inf"):
-        #     raise ValueError("OverflowError: cannot convert float infinity to integer")
-        # if a is "NAN" or b is "NAN":
-        #     raise ValueError("cannot convert float NaN to integer")
+        if a + b == float("inf") or a + b == -float("inf"):
+            raise ValueError("OverflowError: cannot convert float infinity to integer")
+        if a is "NAN" or b is "NAN":
+            raise ValueError("cannot convert float NaN to integer")
         return int(a) + int(b)
 
     except NameError as ne:
