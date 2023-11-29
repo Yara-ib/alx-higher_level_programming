@@ -79,3 +79,8 @@ Matrix missing argument
 Traceback (most recent call last):
 ...
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+# Added
+Matrix has float inf
+>>> matrix_divided([[2, 3], [2, 3], [2, 5]], 1e1000)
+[['0', '0'], ['0', '0'], ['0', '0']]
