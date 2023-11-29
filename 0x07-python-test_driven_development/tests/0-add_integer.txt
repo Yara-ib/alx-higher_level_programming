@@ -110,3 +110,4 @@ ValueError: cannot convert float NaN to integer
 >>> add_integer(0 ** 0.5, float("inf"))
 Traceback (most recent call last):
 ...
+OverflowError: cannot convert float infinity to integer
