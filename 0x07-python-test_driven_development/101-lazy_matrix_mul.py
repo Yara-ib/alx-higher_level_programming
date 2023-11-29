@@ -13,8 +13,10 @@ def lazy_matrix_mul(m_a, m_b):
     Returns:
         new matrix of matrix multiplication.
     """
-    if not isinstance(m_a, list) or not isinstance(m_b, list):
-        raise TypeError("Scalar operands are not allowed, use '*' instead")
+    if not isinstance(m_a, list):
+        raise TypeError("m_a must be a list")
+    if not isinstance(m_b, list):
+        raise TypeError("m_b must be a list")
 
     if not all(isinstance(in_matrix, list) for in_matrix in m_a):
         raise TypeError("m_a must be a list of lists")
