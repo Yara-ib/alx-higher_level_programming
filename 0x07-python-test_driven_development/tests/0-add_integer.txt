@@ -106,3 +106,7 @@ NameError: name 'z' is not defined
 Traceback (most recent call last):
 ...
 ValueError: cannot convert float NaN to integer
+
+>>> add_integer(0 ** 0.5, float("inf"))
+Traceback (most recent call last):
+...
