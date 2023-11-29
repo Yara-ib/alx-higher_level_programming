@@ -100,7 +100,3 @@ NameError: name 'z' is not defined
 
 >>> add_integer(0 ** 0.5, 0 ** 0.5)
 0
-
-Added 2 cases according to the checker:
-float overflow
-if b not add
