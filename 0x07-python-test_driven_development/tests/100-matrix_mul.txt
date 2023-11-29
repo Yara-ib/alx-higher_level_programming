@@ -70,7 +70,3 @@ TypeError: m_b must be a list
 Traceback (most recent call last):
 ...
 TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
-
-
->>> matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
-[[7, 10], [15, 22]]
