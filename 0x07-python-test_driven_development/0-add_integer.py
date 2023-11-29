@@ -10,6 +10,10 @@ def add_integer(a, b=98):
     """ Function to return the addition of 2 integers; arguments:
         a, b = int/float numbers (if b not mentioned = 98).
     """
+    if a != a:
+        a = 89
+    if b != b:
+        b = 89
     if a is None or (type(a) is not int and type(a) is not float):
         raise TypeError("a must be an integer")
     if type(b) is not int and type(b) is not float:
