@@ -32,6 +32,9 @@ def matrix_mul(m_a, m_b):
     if not all(isinstance(item, (int, float)) for row in m_b for item in row):
         raise TypeError("m_b should contain only integers or floats")
 
+    if not all(len(m_a) == len(m_b)):
+        raise ValueError("m_a and m_b can't be multiplied")
+
     if not all(len(m_a[0]) == len(idx) for idx in m_a):
         raise TypeError("each row of m_a must be of the same size")
     if not all(len(m_b[0]) == len(idx) for idx in m_b):
