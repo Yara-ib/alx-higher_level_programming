@@ -65,3 +65,7 @@ TypeError: m_b should contain only integers or floats
 Traceback (most recent call last):
 ...
 TypeError: m_b must be a list
+
+>>> matrix_mul()
+Traceback (most recent call last):
+...
