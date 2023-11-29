@@ -36,13 +36,6 @@ def matrix_divided(matrix, div):
         if div == float("inf"):
             return [["0" for item in row]for row in new_matrix]
 
-        # if not matrix:
-        #     raise TypeError("matrix_divided() missing 1 required positional argument: 'matrix'")
-
-        # if not div:
-        #     raise TypeError("matrix_divided() missing 1 required positional argument: 'div'")
-
-
     except NameError as ne:
         unknown_variable = str(ne).split("'")[1]
         print("NameError: name {} is not defined".format(unknown_variable))
