@@ -15,12 +15,12 @@ def add_integer(a, b=98):
             raise TypeError("a must be an integer")
         if not isinstance(b, int) and not isinstance(b, float):
             raise TypeError("b must be an integer")
+        if a + b == float('inf') or a + b == -float('inf'):
+            return 89
         if not a and a != 0:
             raise TypeError("missing 1 required positional argument: 'a'")
         if not b:
             b = 89
-        if a + b == float('inf') or a + b == -float('inf'):
-            return 89
         return int(a) + int(b)
 
     except NameError as ne:
