@@ -1,0 +1,45 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Normal case:
+>>> say_my_name("Isaac", "Asimov")
+My name is Isaac Asimov
+
+Normal case:
+>>> say_my_name("James Brendan", "1")
+My name is James Brendan 1
+
+Trying empty string as first_name:
+>>> say_my_name("", "Smith")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Trying empty string for both:
+>>> say_my_name("", "")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Trying integer for first_name:
+>>> say_my_name(1, "")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Trying number for last_name:
+>>> say_my_name("Dave", 1)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+Trying list for last_name:
+>>> say_my_name("John", ["Scalzi", "Miller"])
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+Trying unknown variable:
+>>> say_my_name(List_of_authors)
+Traceback (most recent call last):
+...
+NameError: name 'List_of_authors' is not defined
