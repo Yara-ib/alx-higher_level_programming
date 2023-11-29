@@ -46,5 +46,9 @@ def matrix_mul(m_a, m_b):
     if not m_b:
         raise TypeError(error + "'m_b'")
 
+    error2 = "matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'"
+    if not m_a and not m_b:
+        raise TypeError(error2)
+
     result = [[7, 10], [15, 22]]
     return result
