@@ -26,5 +26,4 @@ TypeError: print_sorted() takes 1 positional argument but 2 were given
 
 >>> MyList([-2, 4, -32, 3.5, 5]).print_sorted()
 
->>> MyList((1, 4, 2, 3, 5)).print_sorted()
-[1, 2, 3, 4, 5]
+>>> MyList([1, 4, True, 3, str]).print_sorted()
