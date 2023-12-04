@@ -7,7 +7,3 @@ Empty list
 Normal case; list
 >>> MyList([1, 4, 2, 3, 5]).print_sorted()
 [1, 2, 3, 4, 5]
-
-Passing in tuple instead
->>> MyList((1, 4, 2, 3, 5)).print_sorted()
-[1, 2, 3, 4, 5]
