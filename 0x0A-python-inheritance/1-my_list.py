@@ -12,4 +12,5 @@ class MyList(list):
         Returns:
             None
         """
-        print(sorted(list(self)))
+        if list(self):
+            print(sorted(list(self)))
