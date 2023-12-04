@@ -12,6 +12,6 @@ class MyList(list):
         Returns:
             None
         """
-        if list(self) and isinstance(self, list):
+        if self and isinstance(self, list):
             if all(isinstance(x, int) for x in self):
                 print(sorted(self))
