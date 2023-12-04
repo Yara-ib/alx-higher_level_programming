@@ -22,5 +22,3 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0 and isinstance(name, str):
             raise ValueError("{} must be greater than 0".format(name))
-        if not isinstance(name, str):
-            raise TypeError("{} must be an string".format(name))
