@@ -12,10 +12,5 @@ class MyList(list):
         Returns:
             None
         """
-        try:
-            if list(self):
-                print(sorted(list(self)))
-        except Exception as error:
-            print("Traceback (most recent call last):")
-            print("...")
-            print("{}: {}".format(type(error).__name__, error))
+        if list(self):
+            print(sorted(list(self)))
