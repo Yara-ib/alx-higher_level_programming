@@ -25,6 +25,7 @@ class BaseGeometry:
         if not isinstance(name, str):
             raise TypeError("{} must be an string".format(name))
 
+
 class Rectangle(BaseGeometry):
     """ Rectangle that inherits from BaseGeometry. """
     def __init__(self, width, height):
