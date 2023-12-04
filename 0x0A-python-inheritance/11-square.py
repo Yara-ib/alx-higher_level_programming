@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Square #1 Module. """
+""" Square #2 Module. """
 
 Rectangle = __import__('9-rectangle').Rectangle
 
@@ -18,3 +18,7 @@ class Square(Rectangle):
         Rectangle.__init__(Square, size, size)
         self.__size = size
         Rectangle.area(Square)
+
+    def __str__(self):
+        """ Returning the customized string format."""
+        return ("[Square] {}/{}".format(self.__size, self.__size))
