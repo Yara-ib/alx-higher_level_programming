@@ -17,4 +17,4 @@ class Square(Rectangle):
         """
         Rectangle.__init__(Square, size, size)
         self.__size = size
-        Rectangle.area(Square)
+        self.area(Square)
