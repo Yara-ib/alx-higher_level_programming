@@ -14,4 +14,4 @@ class MyList(list):
         """
         if list(self) and isinstance(self, list):
             if all(isinstance(x, int) for x in self):
-                print(sorted(list(self)))
+                print(sorted(self))
