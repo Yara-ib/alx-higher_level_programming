@@ -12,5 +12,8 @@ class MyList(list):
         Returns:
             None
         """
-        if list(self):
-            print(sorted(list(self)))
+        try:
+            if list(self):
+                print(sorted(list(self)))
+        except Exception as error:
+            print("{}: {}".format(type(error).__name__, error))
