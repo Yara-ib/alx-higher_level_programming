@@ -6,14 +6,13 @@ def add_attribute(self, name, value):
     """ adds a new attribute to an object if it’s possible
 
     Args:
-        name: name.
+        name: name of the attribute.
         value: value to be added.
 
     Returns:
         new added attribute or error.
     """
-    self.__name = name
-    if hasattr(self, self.__name):
+    if not hasattr(self, "__dict__"):
         raise TypeError("can't add new attribute")
 
     setattr(self, name, value)
