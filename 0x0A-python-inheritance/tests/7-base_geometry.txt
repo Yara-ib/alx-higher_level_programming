@@ -25,4 +25,3 @@
 ...     BaseGeometry().integer_validator(4, -4)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] 4 must be an string
