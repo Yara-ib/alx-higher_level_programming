@@ -18,12 +18,11 @@ class BaseGeometry:
         Returns:
             Errors depends on the case.
         """
-        if type(value) is not int and isinstance(name, str):
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
-        if value <= 0 and isinstance(name, str):
+        if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
-        if not isinstance(name, str):
-            raise TypeError("{} must be an string".format(name))
+
 
 
 class Rectangle(BaseGeometry):
