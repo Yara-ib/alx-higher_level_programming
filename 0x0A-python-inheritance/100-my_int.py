@@ -3,14 +3,11 @@
 
 
 class MyInt(int):
-    """ Class MyInt that inherits from int. """
-    def __init__(self, res):
-        """ Constructor to initialize the instance. """
-        super().__init__(res)
-        self.__res = res
+    """ Class MyInt that inherits from int but it's a rebel! """
     def __eq__(self, other):
         """ To handle == between instances."""
-        return self.res != other.res
+        return int.__ne__(self, other)
+
     def __ne__(self, other):
         """ To handle != between instances."""
-        return self.res == other.res
+        return int.__eq__(self, other)
