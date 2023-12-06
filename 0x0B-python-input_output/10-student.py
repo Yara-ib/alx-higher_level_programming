@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Student to JSON Module. """
+""" Student to JSON with filter Module. """
 
 
 class Student:
@@ -18,7 +18,8 @@ class Student:
 
     def to_json(self, attrs=None):
         """ Retrieves a dictionary representation of a Student."""
-        if type(attrs) is list and all(isinstance(attr, str) for attr in attrs):
-            return self.__dict__
+        if type(attrs) is list:
+            if all(isinstance(attr, str) for attr in attrs)
+                return self.__dict__
         else:
             return self.__dict__
