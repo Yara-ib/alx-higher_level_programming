@@ -15,9 +15,9 @@ class Square(Rectangle):
         Returns:
             created objects for square's sides.
         """
-        Rectangle.__init__(Square, size, size)
         self.__size = size
-        Rectangle.area(Square)
+        self.integer_validator("size", self.__size)
+        Rectangle.__init__(self, self.__size, self.__size)
 
     def __str__(self):
         """ Returning the customized string format."""
