@@ -19,7 +19,7 @@ class Student:
     def to_json(self, attrs=None):
         """ Retrieves a dictionary representation of a Student."""
         if type(attrs) is list:
-            if all(isinstance(attr, str) for attr in attrs)
+            if all(isinstance(attr, str) for attr in attrs):
                 return self.__dict__
         else:
             return self.__dict__
