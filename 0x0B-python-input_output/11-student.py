@@ -28,7 +28,7 @@ class Student:
                     attr_val[attr] = getattr(self, attr)
             return attr_val
 
-def reload_from_json(self, json):
-    """" replaces all attributes of the Student instance."""
-    for key, value in self:
-        self.update(key, value)
+    def reload_from_json(self, json):
+        """" replaces all attributes of the Student instance."""
+        for key, value in self:
+            self.update(key, value)
