@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""  Log parsing Module. """
+""" Log parsing Module. """
 
 
 get = "GET /projects/260 HTTP/1.1"
