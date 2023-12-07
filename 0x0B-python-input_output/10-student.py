@@ -22,6 +22,7 @@ class Student:
 
         if self.__attrs is None:
             return self.__dict__
+
         else:
             attr_val = {}
             for attr in attrs:
