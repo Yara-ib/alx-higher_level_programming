@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import sys
 """  Log parsing Module. """
+import sys
 
 
 get = "GET /projects/260 HTTP/1.1"
