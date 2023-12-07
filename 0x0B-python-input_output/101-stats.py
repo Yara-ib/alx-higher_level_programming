@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" Log parsing Module. """
 import sys
+""" Log parsing Module. """
 
 
 print(f"File size: {total size}")
