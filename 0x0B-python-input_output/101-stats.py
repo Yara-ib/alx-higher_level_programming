@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-
-
-""" Log parsing Module. """
+""" Student to JSON with filter Module. """
 
 
 list_argv = ["IP Address", "date", get, list_status_code, "file size"]
