@@ -3,7 +3,37 @@ import sys
 """ Log parsing Module. """
 
 
-print(f"File size: {total size}")
-list_status_code = [200, 301, 400, 401, 403, 404, 405, 500]
-if status_code in sorted(list_status_code):
-    print(f"{status_code}: {number}")
+total_size = 0
+count = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+n_line = 0
+
+try:
+    with open("file.txt", "a+") as file:
+        file.read()
+        for line in sys.stdin:
+            try:
+                args = line.split()
+                status_code = int(args[-2])
+                file_size = int(args[-1])
+
+                total_size += file_size
+
+                if status_code in count:
+                    count[status_code] += 1
+
+            except (ValueError, IndexError):
+                pass
+
+            n_line += 1
+
+            if n_line % 10 == 0:
+                print(f"Total file size: {total_size}")
+                for code, code_count in sorted(count.items()):
+                    if code_count > 0:
+                        print(f"{code}: {code_count}")
+
+except KeyboardInterrupt:
+    print(f"Total file size: {total_size}")
+    for code, code_count in sorted(count.items()):
+        if code_count > 0:
+            print(f"{code}: {code_count}")

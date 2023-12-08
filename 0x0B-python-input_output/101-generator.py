@@ -13,3 +13,4 @@ for i in range(10000):
         random.randint(1, 1024)
     ))
     sys.stdout.flush()
+# <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
