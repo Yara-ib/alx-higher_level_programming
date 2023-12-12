@@ -40,6 +40,17 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(json_dictionary2, "[]")
         self.assertEqual(json_dictionary, '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}]')
 
+    def test_from_json_string(self):
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7}
+        ]
+        list_output2 = []
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(list_output, [{'id': 89, 'width': 10, 'height': 4}, {'id': 7, 'width': 1, 'height': 7}])
+        self.assertEqual(list_output2, [])
+
 
     def test_save_to_file(self):
         r1 = Rectangle(10, 7, 2, 8)
