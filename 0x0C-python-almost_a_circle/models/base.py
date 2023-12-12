@@ -78,10 +78,10 @@ class Base:
         Return:
             instance with all attributes already set
         """
-        if cls.__name__ == "Square":
-            n_default = cls(1)
         if cls.__name__ == "Rectangle":
             n_default = cls(1, 1)
+        if cls.__name__ == "Square":
+            n_default = cls(1)
         n_default.update(**dictionary)
         return n_default
 
