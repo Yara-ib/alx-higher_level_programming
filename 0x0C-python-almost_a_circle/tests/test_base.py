@@ -15,24 +15,6 @@ class TestBaseClass(unittest.TestCase):
         b4 = Base(12)
         self.assertEqual(b4.id, 12)
 
-    def test_width(self):
-        self.assertRaises(TypeError, lambda: Rectangle("10", 2))
-        self.assertRaises(ValueError, lambda: Rectangle(-2, 2))
-        self.assertRaises(TypeError, lambda: Rectangle(2.5, 5))
-
-    def test_height(self):
-        self.assertRaises(TypeError, lambda: Rectangle(10, "2"))
-        self.assertRaises(ValueError, lambda: Rectangle(2, -5))
-        self.assertRaises(TypeError, lambda: Rectangle(5, 5.5))
-
-    def test_x(self):
-        self.assertRaises(ValueError, lambda: Rectangle(10, 2, -3, 1))
-        self.assertRaises(TypeError, lambda: Rectangle(2, 5, {10}, 3))
-
-    def test_y(self):
-        self.assertRaises(ValueError, lambda: Rectangle(10, 2, 3, -1))
-        self.assertRaises(TypeError, lambda: Rectangle(2, 5, 10, {}))
-
     def test_to_json_string(self):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
