@@ -33,8 +33,13 @@ class TestBaseClass(unittest.TestCase):
         self.assertRaises(TypeError, lambda: Rectangle(2, 5, 10, {}))
 
     def test_to_json_string(self):
+        r1 = Rectangle(10, 7, 2, 8)
+        dictionary = r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
         json_dictionary2 = Base.to_json_string(None)
         self.assertEqual(json_dictionary2, "[]")
+        self.assertEqual(json_dictionary, '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}]')
+
 
     def test_save_to_file(self):
         r1 = Rectangle(10, 7, 2, 8)
@@ -45,7 +50,6 @@ class TestBaseClass(unittest.TestCase):
             y = []
         self.assertEqual(x, '[{"id": 4, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 5, "width": 2, "height": 4, "x": 0, "y": 0}]')
         self.assertEqual(y, [])
-        # self.assertEqual(, '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]')
 
 
 
