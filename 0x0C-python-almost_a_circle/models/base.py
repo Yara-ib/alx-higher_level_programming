@@ -121,9 +121,16 @@ class Base:
                 sum_all.append(cls.create(**n))
             return sum_all
 
-
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """ Writes the CSV's representation of list_objs to a file
+
+        Args:
+            list_objs: list of instances who inherits of Base
+
+        Return:
+            list of Rectangle or list of Square instances or empty
+        """
         with open(cls.__name__ + ".csv", "w") as file:
             dict_list = []
             if list_objs is not None:
