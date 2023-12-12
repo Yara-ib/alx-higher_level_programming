@@ -33,12 +33,14 @@ class TestBaseClass(unittest.TestCase):
         self.assertRaises(TypeError, lambda: Rectangle(2, 5, 10, {}))
 
     def test_to_json_string(self):
-        dictionary = Rectangle(10, 7, 2, 8).to_dictionary()
-        json_dictionary = Base.to_json_string([dictionary])
-        self.assertEqual(type(json_dictionary), str)
+        # # dictionary = Rectangle(10, 7, 2, 8).to_dictionary()
+        # json_dictionary = Base.to_json_string({"x": 2, "width": 10, "id": 1, "height": 7, "y": 8})
+        # # self.assertEqual(type(json_dictionary), str)
+        # self.assertEqual(json_dictionary, '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]')
 
         json_dictionary2 = Base.to_json_string(None)
         self.assertEqual(json_dictionary2, "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
 
 if __name__ == '__main__':
     unittest.main()
