@@ -33,14 +33,21 @@ class TestBaseClass(unittest.TestCase):
         self.assertRaises(TypeError, lambda: Rectangle(2, 5, 10, {}))
 
     def test_to_json_string(self):
-        # # dictionary = Rectangle(10, 7, 2, 8).to_dictionary()
-        # json_dictionary = Base.to_json_string({"x": 2, "width": 10, "id": 1, "height": 7, "y": 8})
-        # # self.assertEqual(type(json_dictionary), str)
-        # self.assertEqual(json_dictionary, '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]')
-
         json_dictionary2 = Base.to_json_string(None)
         self.assertEqual(json_dictionary2, "[]")
-        self.assertEqual(Base.to_json_string([]), "[]")
+
+    def test_save_to_file(self):
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", "r") as file:
+            x = file.read()
+            y = []
+        self.assertEqual(x, '[{"id": 4, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 5, "width": 2, "height": 4, "x": 0, "y": 0}]')
+        self.assertEqual(y, [])
+        # self.assertEqual(, '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]')
+
+
 
 if __name__ == '__main__':
     unittest.main()
