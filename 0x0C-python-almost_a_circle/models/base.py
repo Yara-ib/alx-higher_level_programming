@@ -96,15 +96,15 @@ class Base:
         Return:
             list of instances
         """
-        # file = cls.__name__ + ".json"
-        # if not file:
-        #     return []
-        with open(cls.__name__ + ".json", "r") as file:
-            sum_all = []
-            list_dict = cls.from_json_string(file.read())
-            for n in list_dict:
-                sum_all.append(cls.create(**n))
-            return sum_all
+        try:
+            with open(cls.__name__ + ".json", "r") as file:
+                sum_all = []
+                list_dict = cls.from_json_string(file.read())
+                for n in list_dict:
+                    sum_all.append(cls.create(**n))
+                return sum_all
+        except FileNotFoundError:
+            return []
 
     @classmethod
     def load_from_file_csv(cls):
