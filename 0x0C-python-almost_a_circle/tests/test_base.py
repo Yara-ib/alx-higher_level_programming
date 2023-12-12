@@ -65,7 +65,6 @@ class TestBaseClass(unittest.TestCase):
         list_squares_output2 = []
         self.assertEqual("{}".format(list_squares_output2), "[]")
 
-
     def create(self):
         r1 = Rectangle(3, 5, 1)
         r1_dictionary = r1.to_dictionary()

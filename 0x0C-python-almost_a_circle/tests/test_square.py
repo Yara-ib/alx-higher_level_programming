@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Unittest for Square Class """
 import unittest
-from models.base import Base
 from models.square import Square
 
 
@@ -21,5 +20,16 @@ class TestSquare(unittest.TestCase):
         self.assertRaises(TypeError, lambda: Square(5, 10, {}))
 
     def test_area(self):
-        r3 = Square(10, 0, 0, 12)
-        self.assertEqual(r3.area(), 100)
+        self.assertEqual(Square(10, 0, 0, 12).area(), 100)
+
+    def test_to_dictionary(self):
+        self.assertEqual(Square(10, 2, 1).to_dictionary(), {'id': 14, 'size': 10, 'x': 2, 'y': 1})
+
+    def test_update(self):
+        s1 = Square(5)
+        s1.update(size=7, id=89, y=1)
+        self.assertEqual(Square.__str__(s1), "[Square] (89) 0/1 - 7")
+
+
+if __name__ == '__main__':
+    unittest.main()
