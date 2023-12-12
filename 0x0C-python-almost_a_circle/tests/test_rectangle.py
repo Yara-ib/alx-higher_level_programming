@@ -40,5 +40,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(Rectangle.__str__(r1), "[Rectangle] (89) 3/1 - 2/10")
 
 
+
 if __name__ == '__main__':
     unittest.main()

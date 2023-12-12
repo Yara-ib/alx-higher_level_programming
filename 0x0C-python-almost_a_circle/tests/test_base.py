@@ -72,6 +72,11 @@ class TestBaseClass(unittest.TestCase):
         self.assertFalse(r1 is r2)
         self.assertFalse(r1 == r2)
 
+        s1 = Square(3, 5, 1)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertFalse(s1 is s2)
+        self.assertFalse(s1 == s2)
 
 if __name__ == '__main__':
     unittest.main()
