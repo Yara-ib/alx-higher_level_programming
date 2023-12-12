@@ -32,16 +32,10 @@ class TestBase(unittest.TestCase):
         self.assertRaises(ValueError, lambda: Rectangle(10, 2, 3, -1))
         self.assertRaises(TypeError, lambda: Rectangle(2, 5, 10, {}))
 
-
-    # def test_to_json_string(self):
-    #     dictionary = Rectangle(10, 7, 2, 8).to_dictionary()
-    #     json_dictionary = Base.to_json_string([dictionary])
-    #     self.assertEqual(type(json_dictionary), str)
-
-    #     err = "TypeError: __init__() missing 2 required positional arguments: 'width' and 'height'"
-    #     dictionary2 = Rectangle().to_dictionary()
-    #     json_dictionary = Base.to_json_string([])
-    #     self.assertEqual(json_dictionary, err)
+    def test_to_json_string(self):
+        dictionary = Rectangle(10, 7, 2, 8).to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(type(json_dictionary), str)
 
 if __name__ == '__main__':
     unittest.main()
