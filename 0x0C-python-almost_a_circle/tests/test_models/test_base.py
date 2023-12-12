@@ -5,7 +5,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 
 
-class TestBase(unittest.TestCase):
+class TestBaseClass(unittest.TestCase):
     def test_id(self):
         b1 = Base()
         b2 = Base()
