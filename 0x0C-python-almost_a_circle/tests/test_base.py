@@ -37,5 +37,8 @@ class TestBaseClass(unittest.TestCase):
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(type(json_dictionary), str)
 
+        json_dictionary2 = Base.to_json_string(None)
+        self.assertEqual(json_dictionary2, "[]")
+
 if __name__ == '__main__':
     unittest.main()
