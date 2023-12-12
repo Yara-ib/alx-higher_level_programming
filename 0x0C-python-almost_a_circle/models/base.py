@@ -102,38 +102,3 @@ class Base:
             for n in list_dict:
                 sum_all.append(cls.create(**n))
             return sum_all
-
-    @classmethod
-    def load_from_file_csv(cls):
-        """
-        Converts CSV file to instances
-
-        Args:
-            None
-
-        Return:
-            list of instances
-        """
-        with open(cls.__name__ + ".csv", "r") as file:
-            sum_all = []
-            list_dict = cls.from_json_string(file.read())
-            for n in list_dict:
-                sum_all.append(cls.create(**n))
-            return sum_all
-
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """ Writes the CSV's representation of list_objs to a file
-
-        Args:
-            list_objs: list of instances who inherits of Base
-
-        Return:
-            list of Rectangle or list of Square instances or empty
-        """
-        with open(cls.__name__ + ".csv", "w") as file:
-            dict_list = []
-            if list_objs is not None:
-                for obj in list_objs:
-                    dict_list.append(cls.to_dictionary(obj))
-            file.write(cls.to_json_string(dict_list))
