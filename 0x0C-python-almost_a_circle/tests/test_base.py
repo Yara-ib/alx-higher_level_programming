@@ -38,7 +38,7 @@ class TestBaseClass(unittest.TestCase):
         json_dictionary = Base.to_json_string([dictionary])
         json_dictionary2 = Base.to_json_string(None)
         self.assertEqual(json_dictionary2, "[]")
-        self.assertEqual(json_dictionary, '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}]')
+        self.assertEqual(json_dictionary, '[{"id": 8, "width": 10, "height": 7, "x": 2, "y": 8}]')
 
     def test_from_json_string(self):
         list_input = [
@@ -51,7 +51,6 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(list_output, [{'id': 89, 'width': 10, 'height': 4}, {'id': 7, 'width': 1, 'height': 7}])
         self.assertEqual(list_output2, [])
 
-
     def test_save_to_file(self):
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
@@ -59,9 +58,22 @@ class TestBaseClass(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             x = file.read()
             y = []
-        self.assertEqual(x, '[{"id": 4, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 5, "width": 2, "height": 4, "x": 0, "y": 0}]')
+        self.assertEqual(x, '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 7, "width": 2, "height": 4, "x": 0, "y": 0}]')
         self.assertEqual(y, [])
 
+    def test_load_from_file(self):
+        r1 = Rectangle(10, 7, 2, 8)
+        list_rectangles_input = [r1]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        output = "[Rectangle] (4) 2/8 - 10/7"
+        for rect in list_rectangles_input:
+            self.assertEqual("{}".format(rect), output)
+        list_rectangles_output2 = []
+        self.assertEqual("{}".format(list_rectangles_output2), "[]")
+
+    def create(self):
+        pass
 
 
 if __name__ == '__main__':
