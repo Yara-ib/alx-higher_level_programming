@@ -97,7 +97,8 @@ class Base:
             list of instances
         """
         sum_all = []
-        if not cls.__name__ + ".json":
+        file = cls.__name__ + ".json"
+        if not file:
             return []
         with open(cls.__name__ + ".json", "r") as file:
             list_dict = cls.from_json_string(file.read())
