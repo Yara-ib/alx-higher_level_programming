@@ -3,6 +3,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBaseClass(unittest.TestCase):
@@ -38,7 +39,7 @@ class TestBaseClass(unittest.TestCase):
         json_dictionary = Base.to_json_string([dictionary])
         json_dictionary2 = Base.to_json_string(None)
         self.assertEqual(json_dictionary2, "[]")
-        self.assertEqual(json_dictionary, '[{"id": 8, "width": 10, "height": 7, "x": 2, "y": 8}]')
+        self.assertEqual(json_dictionary, '[{"id": 10, "width": 10, "height": 7, "x": 2, "y": 8}]')
 
     def test_from_json_string(self):
         list_input = [
@@ -58,7 +59,7 @@ class TestBaseClass(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             x = file.read()
             y = []
-        self.assertEqual(x, '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 7, "width": 2, "height": 4, "x": 0, "y": 0}]')
+        self.assertEqual(x, '[{"id": 8, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]')
         self.assertEqual(y, [])
 
     def test_load_from_file(self):
@@ -72,8 +73,23 @@ class TestBaseClass(unittest.TestCase):
         list_rectangles_output2 = []
         self.assertEqual("{}".format(list_rectangles_output2), "[]")
 
+        s1 = Square(5)
+        list_squares_input = [s1]
+        Square.save_to_file(list_squares_input)
+        list_squares_output = Square.load_from_file()
+        output2 = "[Square] (6) 0/0 - 5"
+        for square in list_squares_output:
+            self.assertEqual("{}".format(square), output2)
+        list_squares_output2 = []
+        self.assertEqual("{}".format(list_squares_output2), "[]")
+
+
     def create(self):
-        pass
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertFalse(r1 is r2)
+        self.assertFalse(r1 == r2)
 
 
 if __name__ == '__main__':
