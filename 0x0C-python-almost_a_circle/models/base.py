@@ -96,8 +96,10 @@ class Base:
         Return:
             list of instances
         """
+        sum_all = []
+        if not cls.__name__ + ".json":
+            return []
         with open(cls.__name__ + ".json", "r") as file:
-            sum_all = []
             list_dict = cls.from_json_string(file.read())
             for n in list_dict:
                 sum_all.append(cls.create(**n))
