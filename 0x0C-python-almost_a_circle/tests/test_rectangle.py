@@ -10,12 +10,14 @@ class TestRectangle(unittest.TestCase):
         self.assertRaises(TypeError, lambda: Rectangle("10", 2))
         self.assertRaises(ValueError, lambda: Rectangle(-2, 2))
         self.assertRaises(TypeError, lambda: Rectangle(2.5, 5))
+        self.assertRaises(ValueError, lambda: Rectangle(0, 2))
 
 
     def test_height(self):
         self.assertRaises(TypeError, lambda: Rectangle(10, "2"))
         self.assertRaises(ValueError, lambda: Rectangle(2, -5))
         self.assertRaises(TypeError, lambda: Rectangle(5, 5.5))
+        self.assertRaises(ValueError, lambda: Rectangle(2, 0))
 
 
     def test_x(self):
@@ -34,10 +36,12 @@ class TestRectangle(unittest.TestCase):
 
     def test_display(self):
         self.assertNotEqual(Rectangle(3, 2, 1, 0).display(), "##\n##\n##")
+        self.assertRaises(TypeError, (Rectangle(3, 2, 1).display()))
+        self.assertRaises(TypeError, (Rectangle(3, 2).display()))
 
 
     def test_to_dictionary(self):
-        self.assertEqual(Rectangle(10, 2, 1, 9).to_dictionary(), {'id': 13, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
+        self.assertEqual(Rectangle(10, 2, 1, 9).to_dictionary(), {'id': 15, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
 
 
     def test_update(self):

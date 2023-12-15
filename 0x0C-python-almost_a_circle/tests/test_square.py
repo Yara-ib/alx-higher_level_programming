@@ -27,7 +27,7 @@ class TestSquare(unittest.TestCase):
 
 
     def test_to_dictionary(self):
-        self.assertEqual(Square(10, 2, 1).to_dictionary(), {'id': 15, 'size': 10, 'x': 2, 'y': 1})
+        self.assertEqual(Square(10, 2, 1).to_dictionary(), {'id': 17, 'size': 10, 'x': 2, 'y': 1})
 
 
     def test_update(self):
