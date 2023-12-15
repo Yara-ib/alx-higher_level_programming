@@ -56,6 +56,7 @@ class TestBaseClass(unittest.TestCase):
     def test_save_to_file(self):
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
+        Rectangle.save_to_file(None)
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as file:
             x = file.read()
@@ -65,6 +66,7 @@ class TestBaseClass(unittest.TestCase):
 
         s1 = Square(10, 7, 2, 8)
         s2 = Square(2, 4)
+        Square.save_to_file(None)
         Square.save_to_file([s1, s2])
         with open("Square.json", "r") as file:
             x = file.read()

@@ -10,6 +10,7 @@ class TestSquare(unittest.TestCase):
         self.assertRaises(TypeError, lambda: Square("10"))
         self.assertRaises(ValueError, lambda: Square(-2))
         self.assertRaises(TypeError, lambda: Square(2.5))
+        self.assertRaises(ValueError, lambda: Square(0))
 
 
     def test_x(self):
