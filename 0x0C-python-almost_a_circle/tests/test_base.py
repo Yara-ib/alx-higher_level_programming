@@ -54,6 +54,8 @@ class TestBaseClass(unittest.TestCase):
 
 
     def test_save_to_file(self):
+        self.assertEqual(Rectangle.save_to_file(None), None)
+
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
@@ -63,7 +65,6 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(x, '[{"id": 8, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]')
         self.assertEqual(y, [])
 
-        self.assertEqual(Rectangle.save_to_file(None), None)
 
 
         s1 = Square(10, 7, 2, 8)
