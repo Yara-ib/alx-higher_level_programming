@@ -66,7 +66,6 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(y, [])
 
 
-
         s1 = Square(10, 7, 2, 8)
         s2 = Square(2, 4)
         Square.save_to_file(None)

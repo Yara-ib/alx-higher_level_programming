@@ -27,7 +27,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(Square(10, 0, 0, 12).area(), 100)
 
     def test_display(self):
-        self.assertNotEqual(Square(2, 1, 0).display(), "##\n##")
+        self.assertNotEqual(Square(2, 1).display(), "##\n##")
         self.assertRaises(TypeError, (Square(3, 2, 1).display()))
         self.assertRaises(TypeError, (Square(3, 2).display()))
 
