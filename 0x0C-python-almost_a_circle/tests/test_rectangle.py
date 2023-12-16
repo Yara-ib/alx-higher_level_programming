@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Unittest for Rectangle Class """
 import unittest
-from unittest.mock import patch
 from models.rectangle import Rectangle
 
 
@@ -19,7 +18,7 @@ class TestRectangle(unittest.TestCase):
         self.assertRaises(ValueError, lambda: Rectangle(2, -5))
         self.assertRaises(TypeError, lambda: Rectangle(5, 5.5))
         self.assertRaises(ValueError, lambda: Rectangle(2, 0))
-
+        self.assertEqual(Rectangle(1, 2).display(), None)
 
     def test_x(self):
         self.assertRaises(ValueError, lambda: Rectangle(10, 2, -3, 1))
@@ -41,16 +40,18 @@ class TestRectangle(unittest.TestCase):
         self.assertNotEqual(Rectangle(3, 2).display(), "##\n##\n##")
         self.assertRaises(TypeError, (Rectangle(3, 2, 1).display()))
 
-    # @patch("rectangle.width")
-    # def test_display(self, mock_width):
-    #     mocked_obj = Rectangle(1, 2)
-    #     mock_width.return_value = None
-    #     command = mocked_obj.display(mock_width)
-    #     expected_output = None
-    #     self.assertEqual(command, expected_output)
+
+        # mocked_obj = Rectangle(1, 2)
+        # # command = mocked_obj.display(mock_display)
+        # expected_output = None
+        # mocked_obj.display = unittest.mock.Mock()
+        # mocked_obj.display.return_value = None
+        # actual = mocked_obj.display()
+        # self.assertEqual(actual, expected_output)
+
 
     def test_to_dictionary(self):
-        self.assertEqual(Rectangle(10, 2, 1, 9).to_dictionary(), {'id': 15, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
+        self.assertEqual(Rectangle(10, 2, 1, 9).to_dictionary(), {'id': 16, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
 
 
     def test_update(self):
