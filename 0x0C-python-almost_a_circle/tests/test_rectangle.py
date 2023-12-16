@@ -40,22 +40,9 @@ class TestRectangle(unittest.TestCase):
         self.assertNotEqual(Rectangle(3, 2).display(), "##\n##\n##")
         self.assertRaises(TypeError, (Rectangle(3, 2, 1).display()))
 
-        # mocked_obj = Rectangle(1, 2)
-        # expected_output = None
-        # mocked_obj.display = unittest.mock.Mock()
-        # mocked_obj.display.return_value = None
-        # actual = mocked_obj.display()
-        # self.assertEqual(actual, expected_output)
-
-        mocked_obj = Rectangle(1, 2)
-        expected_output = None
-        with unittest.mock.patch('rectangle.Rectangle.display', return_value=None):
-            actual = mocked_obj.display()
-            self.assertEqual(actual, expected_output)
-
 
     def test_to_dictionary(self):
-        self.assertEqual(Rectangle(10, 2, 1, 9).to_dictionary(), {'id': 16, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
+        self.assertEqual(Rectangle(10, 2, 1, 9).to_dictionary(), {'id': 15, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
 
 
     def test_update(self):
