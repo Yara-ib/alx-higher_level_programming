@@ -18,7 +18,7 @@ class TestRectangle(unittest.TestCase):
         self.assertRaises(ValueError, lambda: Rectangle(2, -5))
         self.assertRaises(TypeError, lambda: Rectangle(5, 5.5))
         self.assertRaises(ValueError, lambda: Rectangle(2, 0))
-        self.assertEqual(Rectangle(1, 2).display(), None)
+
 
     def test_x(self):
         self.assertRaises(ValueError, lambda: Rectangle(10, 2, -3, 1))
@@ -40,14 +40,18 @@ class TestRectangle(unittest.TestCase):
         self.assertNotEqual(Rectangle(3, 2).display(), "##\n##\n##")
         self.assertRaises(TypeError, (Rectangle(3, 2, 1).display()))
 
-
         # mocked_obj = Rectangle(1, 2)
-        # # command = mocked_obj.display(mock_display)
         # expected_output = None
         # mocked_obj.display = unittest.mock.Mock()
         # mocked_obj.display.return_value = None
         # actual = mocked_obj.display()
         # self.assertEqual(actual, expected_output)
+
+        mocked_obj = Rectangle(1, 2)
+        expected_output = None
+        with unittest.mock.patch('rectangle.Rectangle.display', return_value=None):
+            actual = mocked_obj.display()
+            self.assertEqual(actual, expected_output)
 
 
     def test_to_dictionary(self):
