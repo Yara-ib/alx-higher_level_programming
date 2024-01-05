@@ -61,7 +61,7 @@ class Rectangle:
         """ Return the string form for the rectangle represented by #. """
         if self.width == 0 or self.height == 0:
             return ""
-        symbol = self.width * str(self.print_symbol
+        symbol = self.width * str(self.print_symbol)
         return (self.height - 1) * (symbol + "\n") + symbol
 
     def __repr__(self) -> str:
