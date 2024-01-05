@@ -4,6 +4,7 @@
 
 class Rectangle:
     """ Class to define a rectangle. """
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -48,25 +49,23 @@ class Rectangle:
 
     def area(self):
         """ Calculating of the area of a rectangle & return the value. """
-        return self.__height * self.__width
+        return self.width * self.height
 
     def perimeter(self):
         """ Calculating of the perimeter of a rectangle & return the value. """
-        if self.__height == 0 or self.__width == 0:
+        if self.width == 0 or self.height == 0:
             return 0
-        return 2 * (self.__height + self.__width)
+        return 2 * (self.width + self.height)
 
-    def __str__(self):
+    def __str__(self) -> str:
         """ Return the string form for the rectangle represented by #. """
-        if self.__height == 0 or self.__width == 0:
+        if self.width == 0 or self.height == 0:
             return ""
+        return (self.height - 1) * (self.width * str(self.print_symbol) + "\n") + self.width * str(self.print_symbol)
 
-        side = self.__width * str(self.print_symbol)
-        return (side + "\n") * (self.__height - 1) + side
-
-    def __repr__(self):
+    def __repr__(self) -> str:
         """ Return the string form for the rectangle representation. """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({}, {})".format(self.width, self.height)
 
     def __del__(self):
         """ Delete instance of Rectangle & printing message during that. """
@@ -76,13 +75,12 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Method to return the biggest rectangle in area. """
-
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
 
-        if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
+        if rect_1.area() >= rect_2.area():
             return rect_1
         else:
             return rect_2
@@ -90,6 +88,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """ Returns new instances to be squared shape. """
-        cls.__width = size
-        cls.__height = size
-        return cls(cls.__width, cls.__height)
+        return cls(width=size, height=size)
