@@ -1,0 +1,57 @@
+>>> print_square = __import__('4-print_square').print_square
+
+Normal case:
+>>> print_square(4)
+####
+####
+####
+####
+
+Size less than zero:
+>>> print_square(-4)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+Size is float:
+>>> print_square(4.5)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+Size is float && less than zero:
+>>> print_square(-4.5)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+Size is string:
+>>> print_square("Two")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+Size is unknown variable:
+>>> print_square(Who_knows)
+Traceback (most recent call last):
+...
+NameError: name 'Who_knows' is not defined
+
+Size is empty:
+>>> print_square()
+Traceback (most recent call last):
+...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+Size is zero:
+>>> print_square(0)
+
+Size is equation:
+>>> print_square(5 + 2)
+#######
+#######
+#######
+#######
+#######
+#######
+#######

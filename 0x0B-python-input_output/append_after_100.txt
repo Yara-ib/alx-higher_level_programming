@@ -1,0 +1,5 @@
+At Holberton School,
+"C is fun!"
+But it can be very hard if:
+"C is fun!"
+- You don't have strong C knowledge.

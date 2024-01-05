@@ -1,0 +1,47 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Single Line:
+>>> text_indentation("Violence: is the last refuge of the incompetent.")
+Violence:
+<BLANKLINE>
+is the last refuge of the incompetent.
+
+Multi-Line:
+>>> text_indentation("""Again no answer. He went on: "And you men and half of Terminus as well are just as bad.. We sit here, considering the Encyclopedia the all-in-all. We consider the greatest end of science is the classification of past data. It is important, but is there no further work to be done? We're receding and forgetting, don't you see? Here in the Periphery they've lost nuclear power. In Gamma Andromeda, a power plant has undergone meltdown because of poor repairs, and the Chancellor of the Empire complains that nuclear technicians are scarce. And the solution? To train new ones? Never! Instead they're to restrict nuclear power.""")
+Again no answer.
+<BLANKLINE>
+He went on:
+<BLANKLINE>
+"And you men and half of Terminus as well are just as bad..
+<BLANKLINE>
+We sit here, considering the Encyclopedia the all-in-all.
+<BLANKLINE>
+We consider the greatest end of science is the classification of past data.
+<BLANKLINE>
+It is important, but is there no further work to be done?
+<BLANKLINE>
+We're receding and forgetting, don't you see?
+<BLANKLINE>
+Here in the Periphery they've lost nuclear power.
+<BLANKLINE>
+In Gamma Andromeda, a power plant has undergone meltdown because of poor repairs, and the Chancellor of the Empire complains that nuclear technicians are scarce.
+<BLANKLINE>
+And the solution?
+<BLANKLINE>
+To train new ones?
+<BLANKLINE>
+Never! Instead they're to restrict nuclear power.
+
+Non-string:
+>>> text_indentation(9223)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+Special marks:
+>>> text_indentation("“You threw him into space?” “Yup.” “And he didn’t die?” “We only threw him out a little bit.” Marce”")
+“You threw him into space?” “Yup.” “And he didn’t die?” “We only threw him out a little bit.” Marce”
+
+Spaces @the beginning of the line:
+>>> text_indentation(    "I'm not insane, I have a finely calibrated sense of acceptable risk.")
+I'm not insane, I have a finely calibrated sense of acceptable risk.

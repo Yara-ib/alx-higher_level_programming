@@ -1,0 +1,30 @@
+>>> MyList = __import__('1-my_list').MyList
+
+No list
+>>> MyList().print_sorted()
+[]
+
+Empty list
+>>> MyList([]).print_sorted()
+[]
+
+Normal case; list
+>>> MyList([1, 4, 2, 3, 5]).print_sorted()
+[1, 2, 3, 4, 5]
+
+Normal case; list
+>>> MyList([1]).print_sorted()
+[1]
+
+>>> MyList([1]).print_sorted(2)
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+>>> MyList([1, 4, "str", 3, 5]).print_sorted()
+
+>>> MyList([-2, 4, -32, 3, 5]).print_sorted()
+[-32, -2, 3, 4, 5]
+
+>>> MyList([-2, 4, -32, 300003, 5]).print_sorted()
+[-32, -2, 4, 5, 300003]
