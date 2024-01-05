@@ -14,8 +14,8 @@ class Rectangle:
             height: (int) height of a rectangle.
             width : (int) width of a rectangle.
         """
-        self.width = width
         self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1
 
     @property
@@ -90,6 +90,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """ Returns new instances to be squared shape. """
-        cls.__width = size
-        cls.__height = size
-        return cls(cls.__width, cls.__height)
+        return cls(size, size)
