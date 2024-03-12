@@ -1,7 +1,5 @@
 #!/usr/bin/node
 
-const Rectangle = require('./4-rectangle');
-
 // class Square that defines a square
 // & inherits from Rectangle
 class Square extends Rectangle {
