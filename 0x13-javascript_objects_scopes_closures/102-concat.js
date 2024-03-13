@@ -12,7 +12,7 @@ fs.readFile(argv[2], 'utf8', (err, data) => {
 
 fs.readFile(argv[3], 'utf8', (err, data) => {
   error(err);
-  fs.writeFile('./fileC', data, { flag: 'r+' }, (err) => {
+  fs.appendFile('./fileC', data, (err) => {
     error(err);
   });
 });
