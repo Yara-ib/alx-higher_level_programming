@@ -5,14 +5,14 @@ const fs = require('node:fs');
 
 fs.readFile(argv[2], 'utf8', (err, data) => {
   error(err);
-  fs.writeFile('./fileC', data, (err) => {
+  fs.writeFile(argv[4], data, (err) => {
     error(err);
   });
 });
 
 fs.readFile(argv[3], 'utf8', (err, data) => {
   error(err);
-  fs.appendFile('./fileC', data, (err) => {
+  fs.appendFile(argv[4], data, (err) => {
     error(err);
   });
 });
