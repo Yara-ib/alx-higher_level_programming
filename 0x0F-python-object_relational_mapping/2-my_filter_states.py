@@ -21,7 +21,7 @@ if __name__ == '__main__':
     cur = connection.cursor()
     cur.execute(
         'SELECT * FROM `states`'
-        'WHERE name="{}"'.format(argv[4])
+        'WHERE BINARY name="{}"'.format(argv[4])
         + 'ORDER BY id'
     )
 
