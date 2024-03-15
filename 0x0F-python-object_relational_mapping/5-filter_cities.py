@@ -30,9 +30,10 @@ if __name__ == '__main__':
     rows = cur.fetchall()
     for idx, row in enumerate(rows):
         if idx == len(rows) - 1:
-            print(row[0])
+            print(row[0], end="")
         else:
             print(row[0], end=", ")
+    print()
 
     cur.close()
     connection.close()
