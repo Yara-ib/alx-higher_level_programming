@@ -20,7 +20,9 @@ if __name__ == '__main__':
 
     cur = connection.cursor()
     cur.execute(
-        "SELECT * FROM `states` WHERE name LIKE 'N%' ORDER BY id"
+        'SELECT * FROM `states`'
+        'WHERE name LIKE "N%"'
+        'ORDER BY id'
     )
 
     for row in cur.fetchall():
