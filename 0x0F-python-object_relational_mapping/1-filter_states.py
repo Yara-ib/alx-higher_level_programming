@@ -21,7 +21,7 @@ if __name__ == '__main__':
     cur = connection.cursor()
     cur.execute(
         'SELECT * FROM `states`'
-        'WHERE name LIKE "N%"'
+        'WHERE BINARY name LIKE "N%"'
         'ORDER BY id'
     )
 
