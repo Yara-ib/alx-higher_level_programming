@@ -17,10 +17,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    output = session.query(State).order_by(State.id)
-    if output:
-        for row in output:
+    try:
+        for row in session.query(State):
             print(row)
             break
-    else:
+    except Exception:
         print('Nothing')
