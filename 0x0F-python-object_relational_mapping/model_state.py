@@ -13,5 +13,8 @@ class State(Base):
     id = Column('id', Integer, primary_key=True)
     name = Column('name', String(128), nullable=False)
 
+    def __init__(self, name):
+        self.name = name
+
     def __str__(self):
         return f"{self.id}: {self.name}"
