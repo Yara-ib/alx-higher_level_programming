@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ Class definition of a State """
-from sqlalchemy import Integer, String, CHAR, Column
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import Integer, String, Column
 from sqlalchemy.ext.declarative import declarative_base
 
 
 if __name__ == "__main__":
+    """_summary_"""
     Base = declarative_base()
 
     class State(Base):
