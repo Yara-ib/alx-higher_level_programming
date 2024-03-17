@@ -19,11 +19,8 @@ if __name__ == '__main__':
     )
 
     cur = connection.cursor()
-    cur.execute(
-        'SELECT * FROM `states`'
-        'WHERE BINARY name="{}"'.format(argv[4])
-        + 'ORDER BY id'
-    )
+    sql_query = 'SELECT * FROM `states` WHERE BINARY name = %s ORDER BY id'
+    cur.execute(sql_query, (argv[4],))
 
     for row in cur.fetchall():
         print(row)
