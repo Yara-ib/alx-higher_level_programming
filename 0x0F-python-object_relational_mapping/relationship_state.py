@@ -13,10 +13,7 @@ class State(Base):
     __tablename__ = 'states'
     id = Column('id', Integer, primary_key=True)
     name = Column('name', String(128), nullable=False)
-    cities = relationship("City", backref="state", cascade="all, delete")
+    cities = relationship('City', backref='state')
 
-    def __init__(self, name, *args, **kwargs):
+    def __init__(self, name):
         self.name = name
-
-    def __str__(self):
-        return f"{self.id}: {self.name}"

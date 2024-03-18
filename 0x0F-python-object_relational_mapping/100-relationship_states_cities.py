@@ -17,18 +17,12 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
+    Base.metadata.create_all(engine)
 
-    new_obj = State(name='California')
+    new_state = State('California')
 
-    new1 = City(name='San Francisco', state=new_obj)
-    # new_obj.cities = 'San Francisco'
-    session.add(new_obj)
-    session.add(new1)
+    new_city = City('San Francisco')
+    new_state.cities.append(new_city)
+    session.add(new_state)
 
     session.commit()
-    # print(new_obj)
-
-    # results = session.query(City, State).join(City).order_by(City.id)
-
-    # for state, city in results:
-    #     print(f"{city.name}: ({state.id}) {state.name}")
