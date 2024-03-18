@@ -2,7 +2,7 @@
 """
     Script that prints all City objects from the database hbtn_0e_14_usa
 """
-from relationship_state import State
+from relationship_state import State, Base
 from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -20,11 +20,13 @@ if __name__ == "__main__":
 
     new_obj = State(name='California')
 
-    new1 = City('San Francisco')
+    new1 = City(name='San Francisco', state=new_obj)
     # new_obj.cities = 'San Francisco'
-    # session.add(new_obj)
-    # session.commit()
-    print(new_obj)
+    session.add(new_obj)
+    session.add(new1)
+
+    session.commit()
+    # print(new_obj)
 
     # results = session.query(City, State).join(City).order_by(City.id)
 

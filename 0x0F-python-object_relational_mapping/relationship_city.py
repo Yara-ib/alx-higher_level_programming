@@ -2,6 +2,7 @@
 """ Class definition of City """
 from relationship_state import Base, State
 from sqlalchemy import Column, Integer, ForeignKey, String
+from sqlalchemy.orm import relationship
 
 
 class City(Base):
@@ -12,6 +13,7 @@ class City(Base):
     state_id = Column(
         'state_id', Integer, ForeignKey('states.id'), nullable=False
         )
+    state = relationship("State", backref="cities")
 
     def __init__(self, name, *args, **kwargs):
         self.name = name
