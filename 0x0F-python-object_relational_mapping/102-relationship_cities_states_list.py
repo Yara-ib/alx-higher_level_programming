@@ -20,7 +20,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    results = session.query(City).order_by(City.id)
+    results = session.query(City)
 
     for row in results:
-        print(f"{row.id}: {row.name}-> {row.state.name}")
+        print(f"{row.id}: {row.name} -> {row.state.name}")
