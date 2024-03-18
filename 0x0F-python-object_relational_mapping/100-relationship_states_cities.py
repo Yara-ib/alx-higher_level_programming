@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-    Script that prints all City objects from the database hbtn_0e_14_usa
+    Script that creates the State “California” with
+    the City “San Francisco” from the database hbtn_0e_100_usa
 """
 from relationship_state import State, Base
 from relationship_city import City
