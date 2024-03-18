@@ -20,13 +20,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # results = session.query(State).order_by(State.id)
-
-    # for row in results:
-    #     print(str(row.id) + ':' + row.name)
-    #     for city in row.cities:
-    #         print('\t' + str(city.id) + ':' + city.name)
     results = session.query(State).order_by(State.id)
+
     for row in results:
         print(f"{row.id}: {row.name}")
         for city in row.cities:
