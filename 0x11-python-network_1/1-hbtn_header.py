@@ -5,7 +5,7 @@ header of the response. """
 
 
 if __name__ == '__main__':
-    from urllib import request, parse
+    from urllib import request
     from sys import argv
 
     url = request.Request(argv[1])
