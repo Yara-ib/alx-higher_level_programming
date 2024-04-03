@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Script sends a request to URL & displays value of variable in response header
+""" Script sends a request to URL & displays value of variable in response header """
 
 
 if __name__ == '__main__':
